@@ -2,7 +2,6 @@ export interface User {
   id: number
   username: string
   email: string
-  password: string
   firstName: string
   lastName: string
   createdAt: Date
@@ -10,5 +9,4 @@ export interface User {
 }
 
 export type CreateUser = Omit<User, 'id'>
-export type ShowUser = Omit<User, 'password'>
 
