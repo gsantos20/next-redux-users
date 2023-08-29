@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap'
 
 const Home: React.FC = () => {
   return (
-    <Container>
+    <Container className='mt-3'>
       <User/>
     </Container>
   )

@@ -18,6 +18,13 @@ const UsersList = () => {
     dispatch(getUsers())
   }, []);
 
+  const addUser = async () => {
+    setUser({});
+    setModalShow(true)
+    setModoTela('POST')
+  };
+
+
   const editUser = async (data: User) => {
     console.log(data);
     setUser(data);
@@ -50,11 +57,11 @@ const UsersList = () => {
 
 
   return (
-    <Row className="mt-3">
+    <>
       <Card className="p-0">
 
       <Card.Header as="h3" className="p-3 ps-4 pe-4">
-        <Header onShow={() => setModalShow(true)}/>
+        <Header onShow={() => addUser()}/>
       </Card.Header>
 
       <Card.Body>
@@ -66,7 +73,7 @@ const UsersList = () => {
         onSave={(data: User) => saveForm(data)}
       >
       </ModalItem>
-    </Row>
+    </>
   );
 };
 
