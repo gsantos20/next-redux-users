@@ -5,7 +5,7 @@ import { CreateUser, User } from "@models/User";
 import { createUser, deleteUser, getUsers, updateUser } from "reducers/users";
 import { useEffect, useState } from "react";
 import ModalItem from "components/ModaItem";
-import { Header } from "components/Header";
+import { HeaderList } from "components/HeaderList";
 
 const UsersList = () => {
   const users = useAppSelector(state => state.users);
@@ -61,7 +61,7 @@ const UsersList = () => {
       <Card className="p-0">
 
       <Card.Header as="h3" className="p-3 ps-4 pe-4">
-        <Header onShow={() => addUser()}/>
+        <HeaderList onShow={() => addUser()}/>
       </Card.Header>
 
       <Card.Body>
