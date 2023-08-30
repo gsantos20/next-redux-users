@@ -5,8 +5,8 @@ import { Container } from "react-bootstrap";
 
 const TableUser = ({ item, editUser, removeUser }: {
   item: User;
-  editUser: (user: User) => void;
-  removeUser: (id: number) => void;
+  editUser: (modoTela: 'POST' | 'PUT' | 'DELETE', user: User) => void;
+  removeUser: (modoTela: 'POST' | 'PUT' | 'DELETE', user: User) => void;
 }) => {
   return (
     <tr key={item.id}>
@@ -20,13 +20,13 @@ const TableUser = ({ item, editUser, removeUser }: {
       <td>
         <div className="d-flex">
           <button type="button" className="btn btn-outline-primary btn-sm"
-            onClick={() => editUser(item)}>
+            onClick={() => editUser('PUT', item)}>
             <i className="fa fa-edit"></i>
           </button>
           &nbsp;&nbsp;
           <button type="button"
             className="btn btn-outline-danger btn-sm"
-            onClick={() => removeUser(item.id)}>
+            onClick={() => removeUser('DELETE', item)}>
             <i className="fa fa-trash"></i>
           </button>
         </div>
@@ -37,8 +37,8 @@ const TableUser = ({ item, editUser, removeUser }: {
 
 interface ListProps {
   data: User[];
-  editUser: (user: User) => void;
-  removeUser: (id: number) => void;
+  editUser: (modoTela: 'POST' | 'PUT' | 'DELETE', user: User) => void;
+  removeUser: (modoTela: 'POST' | 'PUT' | 'DELETE', user: User) => void;
 }
 
 
