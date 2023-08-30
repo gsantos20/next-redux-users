@@ -65,4 +65,28 @@ export default createGlobalStyle`
     max-width: 100%;
     height: auto;
   }
+
+  #toast-container {
+    @darken-amount: 10%;
+
+    .toast-error {
+      background-color: darken(@brand-danger, @darken-amount);
+    }
+
+    .toast-warning {
+      background-color: darken(@brand-warning, @darken-amount);
+    }
+
+    .toast-success {
+      background-color: darken(@brand-success, @darken-amount);
+    }
+
+    .toast-info {
+      background-color: darken(@brand-info, @darken-amount);
+    }
+  }
+
+  .toast-message {
+    color: #000;
+  }
 `

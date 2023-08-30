@@ -1,5 +1,6 @@
 import toastr from 'toastr'
-import 'toastr/build/toastr.min.css'
+import 'toastr/build/toastr.css'
+
 
 toastr.options = {
   timeOut: 4000,
