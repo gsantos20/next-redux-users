@@ -1,8 +1,6 @@
 import { useFormik, ErrorMessage, Formik  } from 'formik';
 import * as Yup from "yup";
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import { Col, Container, Form, Row } from 'react-bootstrap';
+import { Col, Container, Form, Row, Modal, Button } from 'react-bootstrap';
 import FormTextField from 'components/FormField';
 
 const ModalItem = (props) => {
@@ -18,12 +16,9 @@ const ModalItem = (props) => {
     lastName: Yup.string()
       .required("Sobrenome é obrigatorio!"),
   })
+
   const initialValues = {
-    id: props.data.id,
-    username: props.data.username,
-    email: props.data.email,
-    firstName: props.data.firstName,
-    lastName: props.data.lastName,
+    ...props.data
   }
 
   const handleSave = async (values, { setFieldTouched, validateForm }) => {
@@ -40,8 +35,6 @@ const ModalItem = (props) => {
     props.onSave(values);
 
   };
-
-  const initialIsValid = schema.isValidSync(initialValues)
 
   return (
     <>
